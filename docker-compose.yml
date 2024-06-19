@@ -21,3 +21,5 @@ volumes:
   mongodata:
   
 #docker-compose up -d
+#docker volume list
+#docker volume rm carsties_mongodata
