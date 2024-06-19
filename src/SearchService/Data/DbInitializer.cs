@@ -24,13 +24,12 @@ public class DbInitializer
         {
             Console.WriteLine("No data - will attempt to seed");
             var itemData = await File.ReadAllTextAsync("Data/auctions.json");
-            
+
             var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-            
+
             var items = JsonSerializer.Deserialize<List<Item>>(itemData, options);
 
             await DB.SaveAsync(items);
         }
-
     }
 }
