@@ -6,7 +6,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - pgdata:/var/lib/postresql/data
+      - /var/lib/postresql/data
   mongodb:
     image: mongo
     environment:
@@ -21,8 +21,6 @@ services:
     ports:
       - 5672:5672
       - 15672:15672
-volumes:
-  pgdata:
-#docker-compose up -d
+#docker compose up -d
 #docker volume list
 #docker volume rm carsties_mongodata
