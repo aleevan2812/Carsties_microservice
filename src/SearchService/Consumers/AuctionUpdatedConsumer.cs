@@ -33,7 +33,7 @@ public class AuctionUpdatedConsumer : IConsumer<AuctionUpdated>
             }, item)
             .ExecuteAsync();
 
-        if (!result.IsAcknowledged) 
+        if (!result.IsAcknowledged)
             throw new MessageException(typeof(AuctionUpdated), "Problem updating mongodb");
     }
 }
