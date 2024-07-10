@@ -1,4 +1,3 @@
-using Duende.IdentityServer;
 using IdentityService.Data;
 using IdentityService.Models;
 using IdentityService.Services;
@@ -10,64 +9,64 @@ namespace IdentityService;
 
 internal static class HostingExtensions
 {
-    public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
-    {
-        builder.Services.AddRazorPages();
+	public static WebApplication ConfigureServices(this WebApplicationBuilder builder)
+	{
+		builder.Services.AddRazorPages();
 
-        builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+		builder.Services.AddDbContext<ApplicationDbContext>(options =>
+			options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-        builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-            .AddEntityFrameworkStores<ApplicationDbContext>()
-            .AddDefaultTokenProviders();
+		builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+			.AddEntityFrameworkStores<ApplicationDbContext>()
+			.AddDefaultTokenProviders();
 
-        builder.Services
-            .AddIdentityServer(options =>
-            {
-                options.Events.RaiseErrorEvents = true;
-                options.Events.RaiseInformationEvents = true;
-                options.Events.RaiseFailureEvents = true;
-                options.Events.RaiseSuccessEvents = true;
-                
-                if (builder.Environment.IsEnvironment("Docker"))
-                {
-                    options.IssuerUri = "identity-svc";
-                }
+		builder.Services
+			.AddIdentityServer(options =>
+			{
+				options.Events.RaiseErrorEvents = true;
+				options.Events.RaiseInformationEvents = true;
+				options.Events.RaiseFailureEvents = true;
+				options.Events.RaiseSuccessEvents = true;
 
-                // see https://docs.duendesoftware.com/identityserver/v6/fundamentals/resources/
-                // options.EmitStaticAudienceClaim = true;
-            })
-            .AddInMemoryIdentityResources(Config.IdentityResources)
-            .AddInMemoryApiScopes(Config.ApiScopes)
-            .AddInMemoryClients(Config.Clients)
-            .AddAspNetIdentity<ApplicationUser>()
-            .AddProfileService<CustomProfileService>();
+				if (builder.Environment.IsEnvironment("Docker"))
+				{
+					options.IssuerUri = "identity-svc";
+				}
 
-        builder.Services.ConfigureApplicationCookie(options =>
-        {
-            // this is required to get this functionality working when using Http _ Alee
-            options.Cookie.SameSite = SameSiteMode.Lax;
-        });
+				// see https://docs.duendesoftware.com/identityserver/v6/fundamentals/resources/
+				// options.EmitStaticAudienceClaim = true;
+			})
+			.AddInMemoryIdentityResources(Config.IdentityResources)
+			.AddInMemoryApiScopes(Config.ApiScopes)
+			.AddInMemoryClients(Config.Clients)
+			.AddAspNetIdentity<ApplicationUser>()
+			.AddProfileService<CustomProfileService>();
 
-        builder.Services.AddAuthentication();
+		builder.Services.ConfigureApplicationCookie(options =>
+		{
+			// this is required to get this functionality working when using Http _ Alee
+			options.Cookie.SameSite = SameSiteMode.Lax;
+		});
 
-        return builder.Build();
-    }
+		builder.Services.AddAuthentication();
 
-    public static WebApplication ConfigurePipeline(this WebApplication app)
-    {
-        app.UseSerilogRequestLogging();
+		return builder.Build();
+	}
 
-        if (app.Environment.IsDevelopment()) app.UseDeveloperExceptionPage();
+	public static WebApplication ConfigurePipeline(this WebApplication app)
+	{
+		app.UseSerilogRequestLogging();
 
-        app.UseStaticFiles();
-        app.UseRouting();
-        app.UseIdentityServer();
-        app.UseAuthorization();
+		if (app.Environment.IsDevelopment()) app.UseDeveloperExceptionPage();
 
-        app.MapRazorPages()
-            .RequireAuthorization();
+		app.UseStaticFiles();
+		app.UseRouting();
+		app.UseIdentityServer();
+		app.UseAuthorization();
 
-        return app;
-    }
+		app.MapRazorPages()
+			.RequireAuthorization();
+
+		return app;
+	}
 }

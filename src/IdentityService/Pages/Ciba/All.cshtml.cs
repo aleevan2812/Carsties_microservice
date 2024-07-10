@@ -12,17 +12,17 @@ namespace IdentityService.Pages.Ciba;
 [Authorize]
 public class AllModel : PageModel
 {
-    private readonly IBackchannelAuthenticationInteractionService _backchannelAuthenticationInteraction;
+	private readonly IBackchannelAuthenticationInteractionService _backchannelAuthenticationInteraction;
 
-    public AllModel(IBackchannelAuthenticationInteractionService backchannelAuthenticationInteractionService)
-    {
-        _backchannelAuthenticationInteraction = backchannelAuthenticationInteractionService;
-    }
+	public AllModel(IBackchannelAuthenticationInteractionService backchannelAuthenticationInteractionService)
+	{
+		_backchannelAuthenticationInteraction = backchannelAuthenticationInteractionService;
+	}
 
-    public IEnumerable<BackchannelUserLoginRequest> Logins { get; set; } = default!;
+	public IEnumerable<BackchannelUserLoginRequest> Logins { get; set; } = default!;
 
-    public async Task OnGet()
-    {
-        Logins = await _backchannelAuthenticationInteraction.GetPendingLoginRequestsForCurrentUserAsync();
-    }
+	public async Task OnGet()
+	{
+		Logins = await _backchannelAuthenticationInteraction.GetPendingLoginRequestsForCurrentUserAsync();
+	}
 }
