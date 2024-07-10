@@ -5,5 +5,6 @@ export default function Home() {
     <div>
       <Listings />
     </div>
+      
   );
 }
