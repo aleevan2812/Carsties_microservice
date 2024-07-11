@@ -3,8 +3,9 @@
 import React from "react";
 import { json } from "stream/consumers";
 import AuctionCard from "./AuctionCard";
+import { Auction, PagedResult } from "@/public/types";
 
-async function getData() {
+async function getData(): Promise<PagedResult<Auction>> {
   const res = await fetch("http://localhost:6001/search?pageSize=10");
 
   // console.log(res);
