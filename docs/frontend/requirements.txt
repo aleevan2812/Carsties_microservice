@@ -4,3 +4,4 @@ npm install react-icons
 npm install -D @tailwindcss/aspect-ratio
 npm install react-countdown
 npm i flowbite  flowbite-react
+npm install zustand query-string
