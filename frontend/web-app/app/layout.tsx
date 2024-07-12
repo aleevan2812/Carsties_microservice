@@ -1,5 +1,5 @@
 import "./globals.css";
-import Navbar from "./Nav/Navbar";
+import Navbar from "./nav/Navbar";
 
 export const metadata = {
   title: "Carties",
