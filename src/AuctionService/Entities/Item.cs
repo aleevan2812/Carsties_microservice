@@ -15,5 +15,6 @@ public class Item
 
 	// nav properties
 	public Auction Auction { get; set; }
+
 	public Guid AuctionId { get; set; }
 }
