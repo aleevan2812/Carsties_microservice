@@ -24,4 +24,4 @@ const config: Config = {
     require("flowbite-react/tailwind").plugin(),
   ],
 };
-export default config;
+export default config; 
