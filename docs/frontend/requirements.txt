@@ -5,3 +5,4 @@ npm install -D @tailwindcss/aspect-ratio
 npm install react-countdown
 npm i flowbite  flowbite-react
 npm install zustand query-string
+npm install next-auth
