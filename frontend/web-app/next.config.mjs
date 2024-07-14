@@ -5,7 +5,7 @@ const nextConfig = {
   },
 
   images: {
-    domains: ["cdn.pixabay.com"],
+    domains: ["cdn.pixabay.com", "vinfastnewway.com.vn"],
   },
 };
 
