@@ -3,7 +3,8 @@
     "flowbite-react": "^0.10.1",
     "next-auth": "^4.24.7",
     "react-datepicker": "^7.3.0",
-    "react-hook-form": "^7.52.1"
+    "react-hook-form": "^7.52.1",
+    "react-hot-toast": "^2.4.1"
   },
   "devDependencies": {
     "@types/react-datepicker": "^6.2.0"

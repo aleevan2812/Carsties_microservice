@@ -9,3 +9,4 @@ npm install next-auth
 npm install react-hook-form react-datepicker
 npm install -D @types/react-datepicker
 npm install react-datepicker --save
+npm install react-hot-toast
