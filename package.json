@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "flowbite-react": "^0.10.1",
     "next-auth": "^4.24.7",
     "react-datepicker": "^7.3.0",
     "react-hook-form": "^7.52.1"
