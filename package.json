@@ -1,5 +1,10 @@
 {
   "dependencies": {
-    "next-auth": "^4.24.7"
+    "next-auth": "^4.24.7",
+    "react-datepicker": "^7.3.0",
+    "react-hook-form": "^7.52.1"
+  },
+  "devDependencies": {
+    "@types/react-datepicker": "^6.2.0"
   }
 }
