@@ -1,15 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-#
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuctionService", "src\AuctionService\AuctionService.csproj", "{748AD202-6785-4684-A220-9021682B6034}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuctionService", "src\AuctionService\AuctionService.csproj", "{748AD202-6785-4684-A220-9021682B6034}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchService", "src\SearchService\SearchService.csproj", "{131229EB-6EC0-4C24-8DA0-5A9B7508F11E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SearchService", "src\SearchService\SearchService.csproj", "{131229EB-6EC0-4C24-8DA0-5A9B7508F11E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contracts", "src\Contracts\Contracts.csproj", "{1D6B4E56-13D7-44EC-84BE-7A8FEF5E96E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "src\Contracts\Contracts.csproj", "{1D6B4E56-13D7-44EC-84BE-7A8FEF5E96E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService", "src\IdentityService\IdentityService.csproj", "{54423D4A-4C36-4E9F-994A-F2597738388F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityService", "src\IdentityService\IdentityService.csproj", "{54423D4A-4C36-4E9F-994A-F2597738388F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayService", "src\GatewayService\GatewayService.csproj", "{CE04BC72-6CCE-4CBC-9E6B-D28586660D39}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GatewayService", "src\GatewayService\GatewayService.csproj", "{CE04BC72-6CCE-4CBC-9E6B-D28586660D39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiddingService", "BiddingService\BiddingService.csproj", "{1525DBE7-EBCD-40AB-9446-0F88E3EB6F28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,7 +41,15 @@ Global
 		{CE04BC72-6CCE-4CBC-9E6B-D28586660D39}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE04BC72-6CCE-4CBC-9E6B-D28586660D39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE04BC72-6CCE-4CBC-9E6B-D28586660D39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1525DBE7-EBCD-40AB-9446-0F88E3EB6F28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1525DBE7-EBCD-40AB-9446-0F88E3EB6F28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1525DBE7-EBCD-40AB-9446-0F88E3EB6F28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1525DBE7-EBCD-40AB-9446-0F88E3EB6F28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {96EBE5AF-54E3-4334-9789-F907B020171F}
 	EndGlobalSection
 EndGlobal
