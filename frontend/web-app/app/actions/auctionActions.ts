@@ -15,11 +15,15 @@ export async function updateAuctionTest() {
   };
 
   return await fetchWrapper.put(
-    "auctions/afbee524-5972-4075-8800-7d1f9d7b0a0c",
+    "auctions/afbee524-5972-4075-8800-7d1f9d7b0a0c",  
     data
   );
 }
 
 export async function createAuction(data: FieldValues) {
   return await fetchWrapper.post("auctions", data);
+}
+
+export async function getDetailedViewData(id: string): Promise<Auction> {
+  return await fetchWrapper.get(`auctions/${id}`);
 }
