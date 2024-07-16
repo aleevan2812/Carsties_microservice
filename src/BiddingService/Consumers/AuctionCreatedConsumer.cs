@@ -5,7 +5,7 @@ using MongoDB.Entities;
 
 namespace BiddingService.Consumers;
 
-public class AuctionCrreatedConsumer : IConsumer<AuctionCreated>
+public class AuctionCreatedConsumer : IConsumer<AuctionCreated>
 {
 	public async Task Consume(ConsumeContext<AuctionCreated> context)
 	{
