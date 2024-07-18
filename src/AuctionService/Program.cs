@@ -1,6 +1,6 @@
-using AuctionService;
 using AuctionService.Consumers;
 using AuctionService.Data;
+using AuctionService.Services;
 using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -77,7 +77,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-app.MapGrpcService<GrpcAuctionModel>();
+app.MapGrpcService<GrpcAuctionService>();
 
 try
 {
