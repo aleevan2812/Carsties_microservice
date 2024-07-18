@@ -1,3 +1,4 @@
+using AuctionService;
 using AuctionService.Consumers;
 using AuctionService.Data;
 using MassTransit;
@@ -60,6 +61,8 @@ builder.Services
 		options.TokenValidationParameters.NameClaimType = "username";
 	});
 
+builder.Services.AddGrpc();
+
 var app = builder.Build();
 
 app.UseSwagger();
@@ -74,6 +77,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapGrpcService<GrpcAuctionModel>();
 
 try
 {
