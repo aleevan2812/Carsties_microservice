@@ -1,4 +1,5 @@
 using MassTransit;
+using NotificationService.Consumers;
 using NotificationService.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMassTransit(x =>
 {
+	x.AddConsumersFromNamespaceContaining<AuctionCreatedConsumer>();
+
 	x.SetEndpointNameFormatter(new KebabCaseEndpointNameFormatter("nt", false));
 
 	x.UsingRabbitMq((context, cfg) =>
@@ -21,21 +24,9 @@ builder.Services.AddMassTransit(x =>
 	});
 });
 
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
 builder.Services.AddSignalR();
 
 var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-	app.UseSwagger();
-	app.UseSwaggerUI();
-}
 
 app.MapHub<NotificationHub>("/notifications");
 
