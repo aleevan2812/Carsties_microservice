@@ -13,26 +13,17 @@ type Props = {
 };
 
 export default function BidForm({ auctionId, highBid }: Props) {
-  const {
-    register,
-    handleSubmit,
-    reset,
-  } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const addBid = useBidStore((state) => state.addBid);
 
   function onSubmit(data: FieldValues) {
-    if (data.amount <= highBid) {
-      reset();
-      return toast.error(
-        "Bid must be at least $" + numberWithCommas(highBid + 1)
-      );
-    }
-
-    placeBidForAuction(auctionId, +data.amount).then((bid) => {
-      if (bid.error) throw bid.error;
-      addBid(bid);
-      reset();
-    });
+    placeBidForAuction(auctionId, +data.amount)
+      .then((bid) => {
+        if (bid.error) throw bid.error;
+        addBid(bid);
+        reset();
+      })
+      .catch((err) => toast.error(err.message));
   }
 
   return (
