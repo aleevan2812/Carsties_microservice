@@ -1,6 +1,6 @@
 "use server";
 
-import { PagedResult, Auction } from "@/public/types";
+import { PagedResult, Auction, Bid } from "@/public/types";
 import { getTokenWorkaround } from "./authActions";
 import { fetchWrapper } from "@/lib/fetchWrapper";
 import { FieldValues } from "react-hook-form";
@@ -29,12 +29,16 @@ export async function getDetailedViewData(id: string): Promise<Auction> {
   return await fetchWrapper.get(`auctions/${id}`);
 }
 
-export async function updateAuction(data:FieldValues, id: string) {
+export async function updateAuction(data: FieldValues, id: string) {
   const res = await fetchWrapper.put(`auctions/${id}`, data);
-  revalidatePath(`/auction/${id}`)
+  revalidatePath(`/auction/${id}`);
   return res;
 }
 
 export async function deleteAuction(id: string) {
   return await fetchWrapper.del(`auctions/${id}`);
+}
+
+export async function getBidsForAuction(id: string): Promise<Bid[]> {
+  return await fetchWrapper.get(`bids/${id}`);
 }
