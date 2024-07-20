@@ -11,3 +11,4 @@ npm install -D @types/react-datepicker
 npm install react-datepicker --save
 npm install react-hot-toast
 npm install date-fns
+npm install @microsoft/signalr
