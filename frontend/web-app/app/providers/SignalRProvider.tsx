@@ -26,7 +26,7 @@ export default function SignalRProvider({ children, user }: Props) {
 
   useEffect(() => {
     const newConnection = new HubConnectionBuilder()
-      .withUrl("http://localhost:6001/notifications")
+      .withUrl(process.env.NEXT_PUBLIC_NOTIFY_URL!)
       .withAutomaticReconnect()
       .build();
 
@@ -82,7 +82,7 @@ export default function SignalRProvider({ children, user }: Props) {
     return () => {
       connection?.stop();
     };
-  }, [connection, setCurrentPrice]);
+  }, [connection, setCurrentPrice, addBid, user?.username]);
 
   return children;
 }

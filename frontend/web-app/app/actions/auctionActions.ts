@@ -2,7 +2,7 @@
 
 import { PagedResult, Auction, Bid } from "@/public/types";
 import { getTokenWorkaround } from "./authActions";
-import { fetchWrapper } from "@/lib/fetchWrapper";
+import { fetchWrapper } from "@/app/lib/fetchWrapper";
 import { FieldValues } from "react-hook-form";
 import { revalidatePath } from "next/cache";
 
