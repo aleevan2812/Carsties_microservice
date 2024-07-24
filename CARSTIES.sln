@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GatewayService", "src\Gatew
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiddingService", "src\BiddingService\BiddingService.csproj", "{8F6D87AA-B1CE-4E3D-86BE-82ED6798D923}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationService", "src\NotificationService\NotificationService.csproj", "{566D448E-A0AB-47F3-A156-497D09B727DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NotificationService", "src\NotificationService\NotificationService.csproj", "{566D448E-A0AB-47F3-A156-497D09B727DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OcelotGateWayService", "src\OcelotGateWayService\OcelotGateWayService.csproj", "{5D2EF264-9699-453E-9931-A4998A57E303}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{566D448E-A0AB-47F3-A156-497D09B727DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{566D448E-A0AB-47F3-A156-497D09B727DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{566D448E-A0AB-47F3-A156-497D09B727DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D2EF264-9699-453E-9931-A4998A57E303}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D2EF264-9699-453E-9931-A4998A57E303}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D2EF264-9699-453E-9931-A4998A57E303}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D2EF264-9699-453E-9931-A4998A57E303}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
