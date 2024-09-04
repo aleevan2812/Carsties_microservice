@@ -1,0 +1,81 @@
+{
+  "id": "2eb8dc2e-36ef-417e-a6f4-7415653b78cb",
+  "version": "2.0",
+  "name": "auctions",
+  "url": "http://localhost:3000/auctions/details/c8c3ec17-01bf-49db-82aa-1ef80b833a9f",
+  "tests": [{
+    "id": "6b4caeb6-94f0-48e8-9965-6c7664c78aef",
+    "name": "testGiaKhongHopLe",
+    "commands": [{
+      "id": "3f80fd61-56c9-4d8c-80a2-ff64af3053a7",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/auctions/details/c8c3ec17-01bf-49db-82aa-1ef80b833a9f",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "09979fbb-8caf-43bd-a96a-f1910345f336",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "800x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a7c6f1f3-380f-4ea0-8cdf-9a7a680dee38",
+      "comment": "",
+      "command": "click",
+      "target": "name=amount",
+      "targets": [
+        ["name=amount", "name"],
+        ["css=.rounded-lg > .input-custom", "css:finder"],
+        ["xpath=//input[@name='amount']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "92be4706-bbdb-4ea6-bc33-0bafaae10279",
+      "comment": "",
+      "command": "type",
+      "target": "name=amount",
+      "targets": [
+        ["name=amount", "name"],
+        ["css=.rounded-lg > .input-custom", "css:finder"],
+        ["xpath=//input[@name='amount']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": "100"
+    }, {
+      "id": "e6cd0b48-95aa-48f4-9014-fae18400bc4b",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "name=amount",
+      "targets": [
+        ["name=amount", "name"],
+        ["css=.rounded-lg > .input-custom", "css:finder"],
+        ["xpath=//input[@name='amount']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "2e3fcb0a-195d-4543-91d3-962fe44f1d39",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=.go3958317564",
+      "targets": [
+        ["css=.go3958317564", "css:finder"],
+        ["xpath=//body/div/div/div/div[2]", "xpath:position"]
+      ],
+      "value": "Bid must be at least $10,000,001"
+    }]
+  }],
+  "suites": [{
+    "id": "3febc96e-25b7-492d-99a8-8588fd32a4a2",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["6b4caeb6-94f0-48e8-9965-6c7664c78aef"]
+  }],
+  "urls": ["http://localhost:3000/auctions/details/c8c3ec17-01bf-49db-82aa-1ef80b833a9f"],
+  "plugins": []
+}
